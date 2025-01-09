@@ -18,16 +18,16 @@
     <!-- <link
 href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet"/> -->
 
-    <link href="css/app.css" rel="stylesheet" />
+    <link href="/css/app.css" rel="stylesheet" />
     <!-- <link href="css/output.css" rel="stylesheet"/> -->
 </head>
 
-<body>
+<body class="{{ $bodyClass }}">
     {{ $slot }}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/4.0.9/scrollreveal.js"
         integrity="sha512-XJgPMFq31Ren4pKVQgeD+0JTDzn0IwS1802sc+QTZckE6rny7AN2HLReq6Yamwpd2hFe5nJJGZLvPStWFv5Kww=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="js/app.js"></script>
+    <script src="/js/app.js"></script>
 </body>
 
 </html>
