@@ -71,7 +71,7 @@
         <!-- Find a car form -->
         <section class="find-a-car">
             <div class="container">
-                <form class="find-a-car-form card p-medium flex" action="/s.html" method="GET">
+                <form class="find-a-car-form card p-medium flex" action="{{ route("car.search") }}" method="GET">
                     <div class="find-a-car-inputs">
                         <div>
                             <select id="makerSelect" name="maker_id">

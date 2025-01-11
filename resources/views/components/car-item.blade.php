@@ -1,5 +1,5 @@
 <div class="car-item card">
-    <a href="/view.html">
+    <a href="{{ route("car.show", 1) }}">
         <img class="car-item-img rounded-t" src="/img/cars/Lexus-RX200t-2016/1.jpeg" alt="" />
     </a>
     <div class="p-medium">
