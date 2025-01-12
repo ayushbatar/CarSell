@@ -1,10 +1,10 @@
 <div class="car-item card">
-    <a href="{{ route("car.show", 1) }}">
+    <a href="{{ route("car.show", $car->id) }}">
         <img class="car-item-img rounded-t" src="/img/cars/Lexus-RX200t-2016/1.jpeg" alt="" />
     </a>
     <div class="p-medium">
         <div class="flex items-center justify-between">
-            <small class="text-muted m-0">New Jersey</small>
+            <small class="text-muted m-0">{{ $car->city->name }}</small>
             <button class="btn-heart">
                 <svg style="width: 20px" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                     stroke-width="1.5" stroke="currentColor">
@@ -13,12 +13,12 @@
                 </svg>
             </button>
         </div>
-        <h2 class="car-item-title">2016 - Lexus RX200t</h2>
-        <p class="car-item-price">$25,000</p>
+        <h2 class="car-item-title">{{ $car->year . " - " . $car->carModel->name }}</h2>
+        <p class="car-item-price">{{ $car->price }}</p>
         <hr />
         <p class="m-0">
-            <span class="car-item-badge">SUV</span>
-            <span class="car-item-badge">Electric</span>
+            <span class="car-item-badge">{{ $car->carType->name }}</span>
+            <span class="car-item-badge">{{ $car->fuelType->name }}</span>
         </p>
     </div>
 </div>

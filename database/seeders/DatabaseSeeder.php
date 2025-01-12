@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\CarFeature;
 use App\Models\CarType;
 use App\Models\City;
 use App\Models\FuelType;
@@ -24,11 +25,14 @@ class DatabaseSeeder extends Seeder
         // User::factory()->count(10)->create();
         // State::factory()->count(10)->create();
         // City::factory()->count(10)->create();
-        Car::factory()->count(50)->create();
+        // Car::factory()->count(50)->create();
         // Model::factory()->count(50)->create();
         // CarType::factory()->count(50)->create();
         // FuelType::factory()->count(50)->create();
         // CarType::factory()->count(50)->create();
+        CarFeature::factory()
+            ->count(50) // Create 50 car features
+            ->create();
 
 
     }
