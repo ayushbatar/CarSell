@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Car;
+use App\Models\CarModel;
 use Illuminate\Http\Request;
 
 class CarController extends Controller
@@ -20,6 +21,9 @@ class CarController extends Controller
      */
     public function create()
     {
+        $models = CarModel::select('name')->distinct()->pluck('name');
+        dd($models);
+
         return view('car.create');
     }
 

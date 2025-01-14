@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Car;
 use App\Models\FuelType;
+use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -13,8 +14,10 @@ class HomeController extends Controller
         $publishedCars = Car::where('published_at', '!=', null)->get();
 
         $car = Car::get()->first();
-        dump($car->images);
+        // dump($car->images);
 
         return view('home.index', compact('publishedCars'));
     }
+
+
 }

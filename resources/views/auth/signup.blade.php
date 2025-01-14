@@ -10,26 +10,63 @@
                     </div>
                     <h1 class="auth-page-title">Signup</h1>
 
-                    <form action="" method="post">
+                    <form action="{{ route("signup.form") }}" method="post">
+                        @csrf
                         <div class="form-group">
-                            <input type="email" placeholder="Your Email" />
+                            <input class="form-control @error("firstName") is-invalid @enderror" name="firstName"
+                                type="text" value="{{ old("firstName") }}" placeholder="First Name" />
+                            @error("firstName")
+                                <div class="invalid-feedback" id="firstName">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
                         <div class="form-group">
-                            <input type="password" placeholder="Your Password" />
+                            <input class="form-control @error("lastName") is-invalid @enderror" name="lastName"
+                                type="text" value="{{ old("lastName") }}" placeholder="Last Name" />
+                            @error("lastName")
+                                <div class="invalid-feedback" id="firstName">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
                         <div class="form-group">
-                            <input type="password" placeholder="Repeat Password" />
+                            <input class="form-control @error("phone") is-invalid @enderror" name="phone"
+                                type="text" value="{{ old("phone") }}" placeholder="Phone" />
+                            @error("phone")
+                                <div class="invalid-feedback" id="firstName">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control @error("email") is-invalid @enderror" name="email"
+                                type="email" value="{{ old("email") }}" placeholder="Your Email" />
+                            @error("email")
+                                <div class="invalid-feedback" id="email">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control @error("password") is-invalid @enderror" name="password"
+                                type="password" value="{{ old("password") }}" placeholder="Your Password" />
+                            @error("password")
+                                <div class="invalid-feedback" id="firstName">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control @error("confirm_password") is-invalid @enderror"
+                                name="confirm_password" type="password" placeholder="Repeat Password" />
+                            @error("confirm_password")
+                                <div class="invalid-feedback" id="firstName">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
                         <hr />
-                        <div class="form-group">
-                            <input type="text" placeholder="First Name" />
-                        </div>
-                        <div class="form-group">
-                            <input type="text" placeholder="Last Name" />
-                        </div>
-                        <div class="form-group">
-                            <input type="text" placeholder="Phone" />
-                        </div>
                         <button class="btn btn-primary btn-login w-full">Register</button>
 
                         <div class="social-auth-buttons grid grid-cols-2 gap-1">
@@ -38,7 +75,7 @@
                         </div>
                         <div class="login-text-dont-have-account">
                             Already have an account? -
-                            <a href="/login.html"> Click here to login </a>
+                            <a href="{{ route("login") }}"> Click here to login </a>
                         </div>
                     </form>
                 </div>

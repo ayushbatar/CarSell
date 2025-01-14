@@ -10,12 +10,20 @@
                     </div>
                     <h1 class="auth-page-title">Login</h1>
 
-                    <form action="" method="post">
+                    <form action="{{ route("login.form") }}" method="post">
+                        @csrf
+
                         <div class="form-group">
-                            <input type="email" placeholder="Your Email" />
+                            <input class="form-control @error("email") is-invalid @enderror" name="email"
+                                type="email" value="{{ old("email") }}" placeholder="Your Email" />
+                            @error("email")
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
                         <div class="form-group">
-                            <input type="password" placeholder="Your Password" />
+                            <input class="form-control" name="password" type="password" placeholder="Your Password" />
                         </div>
                         <div class="mb-medium text-right">
                             <a class="auth-page-password-reset" href="/password-reset.html">Reset Password</a>
@@ -29,7 +37,7 @@
                         </div>
                         <div class="login-text-dont-have-account">
                             Don't have an account? -
-                            <a href="/signup.html"> Click here to create one</a>
+                            <a href="{{ route("signup") }}"> Click here to create one</a>
                         </div>
                     </form>
                 </div>
